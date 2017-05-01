@@ -4,7 +4,7 @@
 /****************************************************/
 /************** Compile with VS2010 *****************/
 /****************************************************/
-/*********** Luis ¡ngel Santos Herrero **************/
+/*********** Luis √Ångel Santos Herrero **************/
 /*__________________________________________________*/
 /****************************************************/
 /************ 28/04/2017 Burgos, Spain **************/
@@ -92,7 +92,7 @@ int main( int argc, char* args[] )
 	return 0;
 }
 
-//DEFAULT SDL INIT, I¥M TO LAZY TO DO THIS
+//DEFAULT SDL INIT, I¬¥M TO LAZY TO DO THIS
 bool init()
 {
 	bool success = true;
