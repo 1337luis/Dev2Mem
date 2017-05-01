@@ -26,8 +26,8 @@ const int SCREEN_HEIGHT = 4;
 //VARIABLE DECLARATION
 int			LX, LY, RX, RY, b1, b2, b3, b4;
 int			curX, curY;
-std::string joyName = "";
-POINT		p;
+POINT			p;
+std::string joyName = 	"";
 
 //FUNCTION PROTOTYPES
 bool			init();
