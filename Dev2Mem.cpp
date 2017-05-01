@@ -28,11 +28,10 @@ POINT		p;
 bool			init();
 void			close();
 static void		updateValues();
-//void			ClearScreen();
 
 //SDL DECLARATIONS
 SDL_Joystick*	myJoy = NULL; //JOYSTICK OBJ
-SDL_Window*		gWindow = NULL; //SDL WINDOW
+SDL_Window*	gWindow = NULL; //SDL WINDOW
 SDL_Surface*	gScreenSurface = NULL;
 SDL_Surface*	gSurface = NULL;
 
@@ -77,10 +76,10 @@ int main( int argc, char* args[] )
 				std::cout << "mouseX\t" << curX << "   \t" << &curX << std::endl;	//MOUSE X POSITION
 				std::cout << "mouseY\t" << curY << "   \t" << &curY << std::endl;	//MOUSE Y POSITION
 
-				std::cout << "-> luis1337@outlook.es <-";						//MY MAIL, FOR YOU
+				std::cout << "-> luis1337@outlook.es <-";				//MY MAIL, FOR YOU
 
 				//ClearScreen();
-				COORD xy; xy.X = 0; xy.Y = 0;									//SETS A COORD TO ( 0, 0 )
+				COORD xy; xy.X = 0; xy.Y = 0;						//SETS A COORD TO ( 0, 0 )
 				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), xy );//SETS CONSOLE CURSOR TO ( 0, 0 )
 
 				
@@ -129,9 +128,9 @@ bool init()
 			if ( SDL_Init( SDL_INIT_JOYSTICK ) < 0 ) {
 				//ERROR HANDLING
 				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-										"Joystick",
-										"No se ha podido iniciar la compatibilidad con Joysticks",
-										NULL);
+							"Joystick",
+							"No se ha podido iniciar la compatibilidad con Joysticks",
+							NULL);
 			}
 			else {
 
@@ -139,9 +138,9 @@ bool init()
 				//CHECK NUMBER OF CONTROLLERS
 				if ( SDL_NumJoysticks <= 0 ) {
 					SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-											"Dispositivo",
-											"No se encuentran Joysticks conectados",
-											NULL);
+								"Dispositivo",
+								"No se encuentran Joysticks conectados",
+								NULL);
 				}
 
 			}
@@ -190,15 +189,3 @@ static void updateValues() {
 	
 
 }
-
-/*void clearScreen()
-{
-    HANDLE hOut;
-    COORD Position;
-
-    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-
-    Position.X = 0;
-    Position.Y = 0;
-    SetConsoleCursorPosition(hOut, Position);
-}*/
