@@ -4,7 +4,7 @@
 /****************************************************/
 /************** Compile with VS2010 *****************/
 /****************************************************/
-/*********** Luis ¡ngel Santos Herrero **************/
+/*********** Luis √Ångel Santos Herrero **************/
 /*__________________________________________________*/
 /****************************************************/
 /************ 28/04/2017 Burgos, Spain **************/
@@ -14,7 +14,7 @@
 #pragma once
 
 #include <stdio.h>    //STD INPUT & OUTPUT
-#include <tchar.h>
+#include <tchar.h>    //
 #include <Windows.h> //FOR THE CONSOLE CMDs
 #include <iostream>  //INPUT & OUTPUT STREAM, TO SHOW THE INTERFACE (std::cout & std::endl;)
 
