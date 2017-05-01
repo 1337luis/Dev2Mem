@@ -11,8 +11,13 @@
 /*__________________________________________________*/
 
 
-//MY PRECOMPILED HEADER <3
-#include "stdafx.h"
+
+#include <stdio.h>   //STD INPUT & OUTPUT
+#include <tchar.h>   //
+#include <Windows.h> //FOR THE CONSOLE CMDs
+#include <iostream>  //INPUT & OUTPUT STREAM, TO SHOW THE INTERFACE (std::cout & std::endl;)
+
+#include <SDL.h> //SDL FOR HANDLING INPUT DEVICES
 
 //CONST DECLARATION FOR JOY HANDLER WINDOW SIZE
 const int SCREEN_WIDTH = 6;
