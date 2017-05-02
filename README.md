@@ -10,10 +10,10 @@ I coded this to make a bridge from game devices to Cheat Engine but you can use 
 3. In the wizard check the Empty Project checkBox
 4. Download SDL2 Development Libraries (I'm using 2.0.5 for Visual C++)
 5. Go to project properties (For the configuration you will compile: Debug / Release. I compiled for release)
-  ..1. VC++ Directories -> Include Directiories -> Add <SDL2_DIR>\include
-  ..2. VC++ Directories -> Library Directories -> Add <SDL2_DIR>\lib\x86
-  ..3. Linker -> General -> Incremental Linker -> NO (/INCREMENTAL:NO)
-  ..4. Linker -> Input -> Additional Dependencies -> Add SDL2.lib and SDL2main.lib
+  1. VC++ Directories -> Include Directiories -> Add <SDL2_DIR>\include
+  2. VC++ Directories -> Library Directories -> Add <SDL2_DIR>\lib\x86
+  3. Linker -> General -> Incremental Linker -> NO (/INCREMENTAL:NO)
+  4. Linker -> Input -> Additional Dependencies -> Add SDL2.lib and SDL2main.lib
 6. Compile
 7. Enjoy
 ### Links
