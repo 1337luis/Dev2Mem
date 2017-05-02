@@ -17,5 +17,5 @@ I coded this to make a bridge from game devices to Cheat Engine but you can use 
 6. Compile
 7. Enjoy
 ### Links
-SDL2 Development Libraries for Visual C++ https://www.libsdl.org/release/SDL2-devel-2.0.5-VC.zip
-Microsoft Visual C++ 2010 Redistributable(x86) https://www.microsoft.com/es-es/download/details.aspx?id=5555
+* SDL2 Development Libraries for Visual C++ https://www.libsdl.org/release/SDL2-devel-2.0.5-VC.zip
+* Microsoft Visual C++ 2010 Redistributable(x86) https://www.microsoft.com/es-es/download/details.aspx?id=5555
