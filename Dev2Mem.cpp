@@ -13,7 +13,6 @@
 
 
 #include <stdio.h>   //STD INPUT & OUTPUT
-#include <tchar.h>   //
 #include <Windows.h> //FOR THE CONSOLE CMDs
 #include <iostream>  //INPUT & OUTPUT STREAM, TO SHOW THE INTERFACE (std::cout & std::endl;)
 
