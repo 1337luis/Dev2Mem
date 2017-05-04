@@ -47,7 +47,7 @@ int main( int argc, char* args[] )
 	else {
 			//OPEN JOYSTICK AND GET JOY NAME
 			
-			if(SDL_NumJoysticks() > 0){
+			if( SDL_NumJoysticks() > 0 ){
 			myJoy = SDL_JoystickOpen( 0 );  //IF YOU HAVE MORE THAN ONE DEVICE, CHANGE THIS DEVICE ID.
 			joyName = SDL_JoystickName( myJoy );
 			}
@@ -102,29 +102,29 @@ bool init()
 
 	if ( SDL_Init( SDL_INIT_VIDEO ) < 0)
 	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
 		success = false;
 	}
 	else
 	{
 		//CREATE A WINDOW THAT HANDLES THE JOY (AND HIDES IT)
-		gWindow = SDL_CreateWindow("Joy Handler", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		gWindow = SDL_CreateWindow( "Joy Handler", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 
 		//TRYING TO NOT SHOW THE WINDOW WITHOUT USING SDL_HideWindow()
-		SDL_SetWindowPosition(gWindow, 0, 0);
-		SDL_SetWindowBordered(gWindow, SDL_FALSE);
-		SDL_SetWindowOpacity(gWindow, 0.0f);
-		SDL_SetWindowPosition(gWindow, -20, -20);
-		SDL_SetWindowSize(gWindow, 0, 0);
+		SDL_SetWindowPosition( gWindow, 0, 0 );
+		SDL_SetWindowBordered( gWindow, SDL_FALSE );
+		SDL_SetWindowOpacity( gWindow, 0.0f );
+		SDL_SetWindowPosition( gWindow, -20, -20 );
+		SDL_SetWindowSize( gWindow, 0, 0 );
 
 		if ( gWindow == NULL )
 		{
-			printf("No se puede crear la ventana. Error: %s\n", SDL_GetError());
+			printf( "No se puede crear la ventana. Error: %s\n", SDL_GetError() );
 			success = false;
 		}
 		else
 		{
-			gScreenSurface = SDL_GetWindowSurface(gWindow);
+			gScreenSurface = SDL_GetWindowSurface( gWindow );
 			SDL_GameControllerUpdate;
 			SDL_JoystickUpdate;
 
@@ -156,11 +156,11 @@ bool init()
 //DEFAULT SDL CLOSE, IS NOT USED BUT I DO WHAT I WANT
 void close()
 {
-	system("pause");
-	SDL_FreeSurface(gSurface);
+	system( "pause" );
+	SDL_FreeSurface( gSurface );
 	gSurface = NULL;
 
-	SDL_DestroyWindow(gWindow);
+	SDL_DestroyWindow( gWindow );
 	gWindow = NULL;
 
 	SDL_Quit();
