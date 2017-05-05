@@ -1,9 +1,9 @@
-[Download Here](https://github.com/1337luis/Dev2Mem/releases/latest)
 # Dev2Mem
 A joystick or game controller software that shows you some device values and the memory address of them.
 This program uses SDL2 to handle joysticks and game controllers.
 I coded this to make a bridge from game devices to Cheat Engine but you can use it for everthing you want.
 ##### You will need Microsoft Visual C++ 2010 Redistributable Package (x86)
+[Download Here](https://github.com/1337luis/Dev2Mem/releases/latest)
 
 ## How to compile
 1. Open VS2010 (SHOULD WORK WITH OTHER VERSIONS)
