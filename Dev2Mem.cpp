@@ -34,10 +34,10 @@ void			close();
 static void		updateValues();
 
 //SDL DECLARATIONS
-SDL_Joystick*	myJoy = NULL; //JOYSTICK OBJ
-SDL_Window*	gWindow = NULL; //SDL WINDOW
-SDL_Surface*	gScreenSurface = NULL;
-SDL_Surface*	gSurface = NULL;
+SDL_Joystick*	myJoy 		= NULL; //JOYSTICK OBJ
+SDL_Window*	gWindow		= NULL; //SDL WINDOW
+SDL_Surface*	gScreenSurface 	= NULL;
+SDL_Surface*	gSurface 	= NULL;
 
 //MAIN FUNCTION WITH ARGS, IF YOU WANT TO ADD ARGS TO THE PROGRAM, JUST DO IT.
 int main( int argc, char* args[] )
