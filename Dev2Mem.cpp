@@ -43,50 +43,52 @@ SDL_Surface*	gSurface = NULL;
 int main( int argc, char* args[] )
 {
 	//TEST FOR INIT
-	if ( !init() ) { printf( "Failed to initialize!\n" ); }
-	else {
-			//OPEN JOYSTICK AND GET JOY NAME
+	if ( !init() ) 
+	{ 
+		printf( "Failed to initialize!\n" ); 
+	} else {
+		//OPEN JOYSTICK AND GET JOY NAME
 			
-			if( SDL_NumJoysticks() > 0 ){
+		if( SDL_NumJoysticks() > 0 )
+		{
 			myJoy = SDL_JoystickOpen( 0 );  //IF YOU HAVE MORE THAN ONE DEVICE, CHANGE THIS DEVICE ID.
 			joyName = SDL_JoystickName( myJoy );
-			}
+		}
 
-			//WINDOW CONFIG
-			system( "color a" );
-			system( "mode 30,14" );
-			system( "title Dev2Mem" );
+		//WINDOW CONFIG
+		system( "color a" );
+		system( "mode 30,14" );
+		system( "title Dev2Mem" );
 
 
-			//INFINITE LOOP ON CONSOLE, I LOVE INFINITE LOOPS.
-			while ( true ) {
+		//INFINITE LOOP ON CONSOLE, I LOVE INFINITE LOOPS.
+		while ( true ) 
+		{
 
-				//REFRESH ALL DATA
-				updateValues();
+			//REFRESH ALL DATA
+			updateValues();
 
-				//UPDATES INTERFACE
-				std::cout << joyName.c_str() << "\t" << std::endl;		//DEVICE NAME
-				std::cout << "Eje\tValor\tDireccion" << std::endl;		//TABLE HEADERS
-				std::cout << "LX\t" << LX << "  \t" << &LX << std::endl;	//LEFT X AXIS
-				std::cout << "LY\t" << LY << "  \t" << &LY << std::endl;	//LEFT Y AXIS
-				std::cout << "RX\t" << RX << "  \t" << &RX << std::endl;	//RIGHT X AXIS ( SWAPED Y )
-				std::cout << "RY\t" << RY << "  \t" << &RY << std::endl;	//RIGHT Y AXIS ( SWAPED X )
-				std::cout << "B1\t" << b1 << "  \t" << &b1 << std::endl;	//BUTTON 1
-				std::cout << "B2\t" << b2 << "  \t" << &b2 << std::endl;	//BUTTON 2
-				std::cout << "B3\t" << b3 << "  \t" << &b3 << std::endl;	//BUTTON 3
-				std::cout << "B4\t" << b4 << "  \t" << &b4 << std::endl;	//BUTTON 4
+			//UPDATES INTERFACE
+			std::cout << joyName.c_str() << "\t" << std::endl;		//DEVICE NAME
+			std::cout << "Eje\tValor\tDireccion" << std::endl;		//TABLE HEADERS
+			std::cout << "LX\t" << LX << "  \t" << &LX << std::endl;	//LEFT X AXIS
+			std::cout << "LY\t" << LY << "  \t" << &LY << std::endl;	//LEFT Y AXIS
+			std::cout << "RX\t" << RX << "  \t" << &RX << std::endl;	//RIGHT X AXIS ( SWAPED Y )
+			std::cout << "RY\t" << RY << "  \t" << &RY << std::endl;	//RIGHT Y AXIS ( SWAPED X )
+			std::cout << "B1\t" << b1 << "  \t" << &b1 << std::endl;	//BUTTON 1
+			std::cout << "B2\t" << b2 << "  \t" << &b2 << std::endl;	//BUTTON 2
+			std::cout << "B3\t" << b3 << "  \t" << &b3 << std::endl;	//BUTTON 3
+			std::cout << "B4\t" << b4 << "  \t" << &b4 << std::endl;	//BUTTON 4
 
-				curX = p.x; curY = p.y;
-				std::cout << "mouseX\t" << curX << "   \t" << &curX << std::endl;	//MOUSE X POSITION
-				std::cout << "mouseY\t" << curY << "   \t" << &curY << std::endl;	//MOUSE Y POSITION
+			curX = p.x; curY = p.y;
+			std::cout << "mouseX\t" << curX << "   \t" << &curX << std::endl;	//MOUSE X POSITION
+			std::cout << "mouseY\t" << curY << "   \t" << &curY << std::endl;	//MOUSE Y POSITION
 
-				std::cout << "-> luis1337@outlook.es <-";				//MY MAIL, FOR YOU
+			std::cout << "-> luis1337@outlook.es <-";				//MY MAIL, FOR YOU
 
-				//ClearScreen();
-				COORD xy; xy.X = 0; xy.Y = 0;						//SETS A COORD TO ( 0, 0 )
-				SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), xy );//SETS CONSOLE CURSOR TO ( 0, 0 )
-
-				
+			//ClearScreen();
+			COORD xy; xy.X = 0; xy.Y = 0;						//SETS A COORD TO ( 0, 0 )
+			SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), xy );//SETS CONSOLE CURSOR TO ( 0, 0 )
 
 		}
 	}
@@ -100,13 +102,11 @@ bool init()
 {
 	bool success = true;
 
-	if ( SDL_Init( SDL_INIT_VIDEO ) < 0)
+	if ( SDL_Init( SDL_INIT_VIDEO ) < 0 )
 	{
 		printf( "SDL could not initialize! SDL_Error: %s\n", SDL_GetError() );
 		success = false;
-	}
-	else
-	{
+	} else {
 		//CREATE A WINDOW THAT HANDLES THE JOY (AND HIDES IT)
 		gWindow = SDL_CreateWindow( "Joy Handler", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
 
@@ -129,22 +129,27 @@ bool init()
 			SDL_JoystickUpdate;
 
 			//INIT THE JOYSTICK
-			if ( SDL_Init( SDL_INIT_JOYSTICK ) < 0 ) {
+			if ( SDL_Init( SDL_INIT_JOYSTICK ) < 0 ) 
+			{
 				//ERROR HANDLING
-				SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-							"Joystick",
-							"No se ha podido iniciar la compatibilidad con Joysticks",
-							NULL);
-			}
-			else {
+				SDL_ShowSimpleMessageBox(
+					SDL_MESSAGEBOX_ERROR,
+					"Joystick",
+					"No se ha podido iniciar la compatibilidad con Joysticks",
+					NULL
+				);
+			} else {
 
 				SDL_JoystickUpdate();
 				//CHECK NUMBER OF CONTROLLERS
-				if ( SDL_NumJoysticks <= 0 ) {
-					SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-								"Dispositivo",
-								"No se encuentran Joysticks conectados",
-								NULL);
+				if ( SDL_NumJoysticks <= 0 ) 
+				{
+					SDL_ShowSimpleMessageBox(
+						SDL_MESSAGEBOX_ERROR,
+						"Dispositivo",
+						"No se encuentran Joysticks conectados",
+						NULL
+					);
 				}
 
 			}
@@ -167,7 +172,8 @@ void close()
 }
 
 //THIS FUNCTION UPDATES THE VALUES OF ALL VARIABLES
-static void updateValues() {
+static void updateValues() 
+{
 
 	//UPDATE CURSOR POSITION ON GLOBAL SCREEN.
 	GetCursorPos( &p );
